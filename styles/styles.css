@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/*
+* CSS Additions to Bootstrap
+* Project WEBP - Jasmin, Jonathan, Patrick
+*/
+
+
+
+
+#introwrap{
+    float: left;
+    display: inline;
+}
+
+#titlecard{
+   float: left;
+   position: relative;
+   height: 80vh;
+   width: 100vw;
+   margin-top: 20vh;
+   padding-right: 40vw;
+}
+
+
+#storywrap{
+    position: absolute;
+    float: left;
+    display: inline;
+    width: 34600px;
+}
+
+
+.inline_box{
+    float: left;
+    display: inline;
+    height: 100vh;
+    width: 120vw;
+}
+
+
+
+.textbox{
+    float: center;
+    height: auto;
+    width: 66vw;
+    margin: 45vh auto;
+}
+
+
+.graphicbox{
+    text-align: center;
+    margin: 30vh auto;
+}
