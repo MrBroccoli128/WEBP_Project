@@ -1,52 +1,66 @@
 $(function () {
 
-     /*var trashpicURL = "./images/trashcan.svg"
+  /* Volumen in m3 */
+  const volumenPRIMETOWER = 228000;
+  const volumenSEE = 200000;
+  const volumenROCHETOWER = 324000;
 
-    var totalWasteKG = 2800000
-    var kgperlitrewaste = 0.800
-    var trashtonnesizeL = 35
-    var ochsnerbreite = 0.44
+  /* 2.8 Millionen Tonnen an Food Waste in der Schweiz pro Jahr in KG */
+  let totalWasteKG = 2800000000;
 
-    var garbagecancount = (totalWasteKG * kgperlitrewaste)/trashtonnesizeL 
-    var alltrashcansum = (ochsnerhoehe * garbagecancount)
+  /* Umrechnung pro Liter = 1kg Abfall */
+  let volumentrash = totalWasteKG / 1000; /* m3 */
 
+  /* Canvas definieren */
+  c = document.getElementById("grafic");
+  ctx = c.getContext("2d");
 
-    garbagecancount = 10
-    var i;
-   for (i = 0; i = garbagecancount; i++) {
-        var image = new Image();
-        image.src = trashpicURL;
-        image.setAttribute("class", "trashcan");
-        $('#Content').append(image);
-    }*/ 
+  /* Canvas für Referenz */
+  r = document.getElementById("referencebuilding");
+  rtx = r.getContext("2d");
 
 
-    var totalWasteKG = 2800000;
-    var kgperlitrewaste = 0.800; /* kg pro Liter abfall im Durchschnitt */
-    var trashtonnesizeL = 35;/* in Liter */
-    var ochsnerbreite = 0.44;/* in Meter */
-    var garbagecancount = (totalWasteKG * kgperlitrewaste)/trashtonnesizeL ;
-    var alltrashcansum = (ochsnerbreite * garbagecancount);
+  // Initales Trash rect zeichnen, mit den Buttons wird 
+  trashrect();
 
-    c = document.getElementById("distance"); 
-    ctx = c.getContext("2d");
-    c.style.width = (alltrashcansum) + "px";
-    c.style.height =  "500px";
+
+  /*FUNCTIONS */
+  function trashrect() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    let seitenlaenge = Math.floor(Math.cbrt(volumentrash));
+
     ctx.beginPath();
-    canvas_arrow(ctx, 0, 100, alltrashcansum, 100);
+    ctx.lineWidth = "1";
+    ctx.strokeStyle = "black";
+    ctx.rect(5, 5, seitenlaenge, seitenlaenge);
     ctx.stroke();
-    
-    
-    function canvas_arrow(context, fromx, fromy, tox, toy) {
-      var headlen = 20; // length of head in pixels
-      var dx = tox - fromx;
-      var dy = toy - fromy;
-      var angle = Math.atan2(dy, dx);
-      context.moveTo(fromx, fromy);
-      context.lineTo(tox, toy);
-      context.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
-      context.moveTo(tox, toy);
-      context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+
+
+  }
+
+
+  $('.btn').click(function () {
+    let id = $(this).attr('id');
+    let seitenlaenge
+    switch (id) {
+      case "primetower":
+        seitenlaenge = Math.floor(Math.cbrt(volumenPRIMETOWER));
+        break;
+      case "rochetower":
+        seitenlaenge = Math.floor(Math.cbrt(volumenROCHETOWER));
+        break;
+        case "see":
+          seitenlaenge = Math.floor(Math.cbrt(volumenSEE));
+          break;
     }
+    rtx.clearRect(0, 0, r.width, r.height);
+    rtx.beginPath();
+    rtx.lineWidth = "1";
+    rtx.strokeStyle = "blue";
+    rtx.rect(5, 5, seitenlaenge, seitenlaenge);
+    rtx.stroke();
+
+  });
+
 
 });

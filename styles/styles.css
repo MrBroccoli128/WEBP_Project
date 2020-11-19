@@ -11,23 +11,18 @@
 #introwrap{
     float: left;
     display: inline;
+
 }
 
 #titlecard{
    float: left;
    position: relative;
    height: 80vh;
-   margin-top: 20vh;
-   padding-right: 40vw;
+   margin-top: 10vh;
+
 }
 
 
-#storywrap{
-    position: absolute;
-    float: left;
-    display: inline;
-    width: 34600px;
-}
 
 
 .inline_box{
@@ -51,3 +46,8 @@
     text-align: center;
     margin: 30vh auto;
 }
+
+canvas {
+    width:500px;
+
+  }
