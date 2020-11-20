@@ -3,12 +3,11 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Food Waste">
   <meta name="author" content="Patrick Kaelin, Jasmin Sutter, Jonathan Linder">
 
-  <title>Food Waste in Europa</title>
+  <title>Food Waste in der Schweiz</title>
 
   <!-- Bootstrap  CSS VON PATRICK EINGEFÜGT! -->
   <link rel="stylesheet" href="static/bootstrap-4.3.1-dist/css/bootstrap.css">
@@ -19,37 +18,46 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1>Grafik</h1>
+        <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
+          der
+          Schweiz erzeugt wird. Das Quadrat auf der linken Seite stellt die jährliche Foodwaste Menge in der Schweiz
+          beträgt 2.8 Mio. Tonnen.<br>
+        </p>
+      </div>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="">Food Waste in Europa</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-  </nav>
+      <div class="col-md-5">
+        <canvas id="grafic"></canvas>
+        <p>
+          <label>Foodwaste in der Schweiz pro Jahr in Tonnenasdfhgasdfjhasd</label><br>
+          <input type="text" class="textinput" id="foodwasteschweiz" value="2800000000"><br>
 
-  <main role="main" class="container">
+        </p>
+        <button class="btn btn-primary" id="recalc">Volumen neu berechnen</button><br>
+      </div>
 
-    <!-- Intro-->
-    <div id="introwrap">
-      <div id="titlecard">
-        <h1>Interaktive Grafik</h1>
-        <p id="b_text"> Die jährliche Foodwaste Menge in der Schweiz beträgt 2.8 Mio. Tonnen.<br>
-        Zur Vereinfachung </p>
-        <button class="btn" id="primetower">Prime Tower</button>
-        <button class="btn" id="rochetower">Roche Tower</button>
-        <button class="btn" id="see">See</button>
-        <div id="Content">
-          <canvas id="grafic"></canvas><br>
-          <canvas id="referencebuilding"></canvas>
-        </div>
-        <p id="detailedtext">Hello</p>
+
+
+      <div class="col-md-5 ml-md-2">
+        <canvas id="referencebuilding"></canvas>
+        <p>
+          <label>Foodwaste in der Schweiz pro Jahr in Tonnen</label><br>
+        </p>
+        <button class="btn btn-primary reference" id="primetower">Prime Tower</button>
+        <button class="btn btn-primary reference" id="rochetower">Roche Tower</button>
+        <button class="btn btn-primary reference" id="see">See</button>
+        
+        <h4 class="mt-1" id="referencetitle"></h4>
+        <p id="referencetext"></p>
+
 
       </div>
     </div>
-
-  </main>
+  </div>
   <!-- /.container -->
 
   <!-- Bootstrap core JavaScript
