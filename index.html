@@ -25,36 +25,33 @@
         <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
           der
           Schweiz erzeugt wird. Das Quadrat auf der linken Seite stellt die jährliche Foodwaste Menge in der Schweiz
-          beträgt 2.8 Mio. Tonnen.<br>
+          beträgt 2.8 Mio. Tonnen. Jeder Pixel entspricht 1m eines Quaders, welcher diese Abfallmenge repräsentiert<br>
         </p>
       </div>
 
 
       <div class="col-md-5">
         <canvas id="grafic"></canvas>
+        <label id="grafic_desc"></label>
         <p>
-          <label>Foodwaste in der Schweiz pro Jahr in Tonnenasdfhgasdfjhasd</label><br>
-          <input type="text" class="textinput" id="foodwasteschweiz" value="2800000000"><br>
-
+          <label>Foodwaste in der Schweiz pro Jahr in Tonnen:</label><br>
+          <input type="text" class="textinput" id="foodwasteschweiz"><br>
         </p>
         <button class="btn btn-primary" id="recalc">Volumen neu berechnen</button><br>
+        <h4 class="mt-1" id="foodwastetitle"></h4>
+        <p id="foodwastetext"></p>
       </div>
-
 
 
       <div class="col-md-5 ml-md-2">
         <canvas id="referencebuilding"></canvas>
         <p>
-          <label>Foodwaste in der Schweiz pro Jahr in Tonnen</label><br>
+          <button class="btn btn-primary reference" id="primetower">Prime Tower</button>
+          <button class="btn btn-primary reference" id="rochetower">Roche Tower</button>
+          <button class="btn btn-primary reference" id="see">See</button>
         </p>
-        <button class="btn btn-primary reference" id="primetower">Prime Tower</button>
-        <button class="btn btn-primary reference" id="rochetower">Roche Tower</button>
-        <button class="btn btn-primary reference" id="see">See</button>
-        
         <h4 class="mt-1" id="referencetitle"></h4>
         <p id="referencetext"></p>
-
-
       </div>
     </div>
   </div>
