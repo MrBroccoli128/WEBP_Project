@@ -90,18 +90,50 @@ $(function () {
 
   $('#recalc').click(function () {
 
-    f_title = "#foodwastetitle"
-    f_text = "#foodwastetext"
+    f_title = "#foodwastetitle";
+    f_text = "#foodwastetext";
 
     seitenlaenge = getcbrt(($("#foodwasteschweiz").val()));
     drawrect(tctx, tc, seitenlaenge, "black");
     textupdater(f_title, f_text, title_FOODWASTE, text_FOODWASTE.replace("!LAENGE!", seitenlaenge).replace("!MENGE!", $("#foodwasteschweiz").val()));
-
+    //drawCube(window.innerWidth/2,window.innerHeight/2,seitenlaenge,seitenlaenge,seitenlaenge)
   });
 
   //ON LOAD
   // Draw inital trash rect 
   $('#recalc').click();
 
+
+
+
+//Migration auf 3d Model
+  function drawCube(x, y, wx, wy, h) {
+    tctx.beginPath();
+    tctx.moveTo(x, y);
+    tctx.lineTo(x - wx, y - wx * 0.5);
+    tctx.lineTo(x - wx, y - h - wx * 0.5);
+    tctx.lineTo(x, y - h * 1);
+    tctx.closePath();
+    tctx.stroke();
+    tctx.fill();
+
+    tctx.beginPath();
+    tctx.moveTo(x, y);
+    tctx.lineTo(x + wy, y - wy * 0.5);
+    tctx.lineTo(x + wy, y - h - wy * 0.5);
+    tctx.lineTo(x, y - h * 1);
+    tctx.closePath();
+    tctx.stroke();
+    tctx.fill();
+
+    tctx.beginPath();
+    tctx.moveTo(x, y - h);
+    tctx.lineTo(x - wx, y - h - wx * 0.5);
+    tctx.lineTo(x - wx + wy, y - h - (wx * 0.5 + wy * 0.5));
+    tctx.lineTo(x + wy, y - h - wy * 0.5);
+    tctx.closePath();
+    tctx.stroke();
+    tctx.fill();
+  }
 
 });
