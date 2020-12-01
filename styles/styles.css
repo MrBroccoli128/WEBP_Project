@@ -1,4 +1,6 @@
 .nopadding {
     padding: 0 !important;
  }
-
+.slider {
+    width: 300px;
+}

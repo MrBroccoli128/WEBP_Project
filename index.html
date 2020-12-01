@@ -20,48 +20,73 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-10">
         <h1>Grafik</h1>
         <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
           der
           Schweiz erzeugt wird. Das Quadrat auf der linken Seite stellt die jährliche Foodwaste Menge in der Schweiz
           beträgt 2.8 Mio. Tonnen. Jeder Pixel entspricht 1m eines Quaders, welcher diese Abfallmenge repräsentiert<br>
         </p>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection" checked>
+          <label>Schweiz</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
+          <label>Deutschland</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
+          <label>Italien</label>
+        </div>
       </div>
-
-
-      <div class="col-md-5">
+    </div>
+    <div class="row mb-2">
+      <div class="col-5">
         <canvas id="grafic"></canvas>
         <label id="grafic_desc"></label>
         <p>
-          <label>Foodwaste in der Schweiz pro Jahr in Tonnen:</label><br>
-          <input type="text" class="textinput" id="foodwasteschweiz"><br>
+          <label>Foodwaste in <span id="text_country"></span> pro Jahr in Tonnen: <span
+              id="text_foodwastemenge"></span></label><br>
         </p>
-        <button class="btn btn-primary" id="recalc">Volumen neu berechnen</button><br>
         <h4 class="mt-1" id="foodwastetitle"></h4>
-        <p id="foodwastetext"></p>
+        <p id="text_foodwastebeschreibung"></p>
       </div>
-
-
-      <div class="col-md-5 ml-md-2">
-        <canvas id="referencebuilding"></canvas>
+      <div class="col-5 ml-2">
+      <canvas id="referencebuilding"></canvas>
         <p>
-          <button class="btn btn-primary reference" id="primetower">Prime Tower</button>
-          <button class="btn btn-primary reference" id="rochetower">Roche Tower</button>
-          <button class="btn btn-primary reference" id="see">Cresta See</button>
+        <div class="referenceselector">
+          <button class="btn btn-primary reference" id="reference1"></button>
+          <button class="btn btn-primary reference" id="reference2"></button>
+          <button class="btn btn-primary reference" id="reference3"></button>
+        </div>
         </p>
-        <h4 class="mt-1" id="referencetitle"></h4>
-        <p id="referencetext"></p>
+        <h4 class="mt-1" id="text_referencetitle"></h4>
+        <p id="text_reference"></p>
       </div>
     </div>
-  </div>
-  <!-- /.container -->
 
-  <!-- Bootstrap core JavaScript
+    <div class="row">
+      <div class="col-10">
+
+        <h2>Wie viel geld verlieren sie durch Foodwaste?</h2>
+
+        <div class="slidecontainer">
+          <input type="range" min="1" max="1000" value="620" class="slider" id="myRange">
+        </div>
+
+
+      </div>
+      <!-- /.container -->
+
+      <!-- Bootstrap core JavaScript
     ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="./static/jquery-3.5.1.slim.min.js"></script>
-  <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-  <script src="./static/d3.min.js"></script>
-  <script src="./static/scripts.js"></script>
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="./static/jquery-3.5.1.slim.min.js"></script>
+      <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+      <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
+      <script src="./static/data_objects.js"></script>
+      <!-- Enthält die Funktonen für die Visualisierung-->
+      <script src="./static/reference_graphics.js"></script>
 </body>
