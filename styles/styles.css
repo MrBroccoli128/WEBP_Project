@@ -4,3 +4,17 @@
 .slider {
     width: 300px;
 }
+
+.first-row {
+
+    min-height: 100vh;
+
+}
+#grafic {
+width: 500px;
+height: 500px;
+}
+.vl {
+    border-left: 1px solid black;
+    height: 500px;
+  }

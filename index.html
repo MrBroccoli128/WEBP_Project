@@ -20,40 +20,49 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-10">
+      <div class="col-12">
         <h1>Grafik</h1>
         <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
-          der
-          Schweiz erzeugt wird. Das Quadrat auf der linken Seite stellt die jährliche Foodwaste Menge in der Schweiz
-          beträgt 2.8 Mio. Tonnen. Jeder Pixel entspricht 1m eines Quaders, welcher diese Abfallmenge repräsentiert<br>
+          im unten gewählten Land erzeugt wird. Das Quadrat auf der linken Seite stellt die jährliche Foodwaste Menge
+          als XXX dar.
+          Jeder Pixel entspricht einem Meter. Auf der rechten Seite kann die Menge in Kontext zu Objekten in der echten
+          Welt
+          gesetzt werden.
         </p>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection" checked>
-          <label>Schweiz</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
-          <label>Deutschland</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
-          <label>Italien</label>
-        </div>
+        <form class="form-inline justify-content-center">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection"
+              checked>
+            <label>Schweiz</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
+            <label>Deutschland</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
+            <label>Italien</label>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="row mb-2">
-      <div class="col-5">
-        <canvas id="grafic"></canvas>
-        <label id="grafic_desc"></label>
-        <p>
-          <label>Foodwaste in <span id="text_country"></span> pro Jahr in Tonnen: <span
-              id="text_foodwastemenge"></span></label><br>
-        </p>
-        <h4 class="mt-1" id="foodwastetitle"></h4>
+    <div class="row">
+      <div class="col-8 mt-4">
+        <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
         <p id="text_foodwastebeschreibung"></p>
+        <canvas id="grafic" width="500px" height="500px"></canvas>
+
       </div>
-      <div class="col-5 ml-2">
-      <canvas id="referencebuilding"></canvas>
+      <div class="col-4 mt-4">
+        <h4 id="title_reference_cube"></h4>
+        <p id="text_reference_cube"></p>
+        <canvas id="grafic_ref" width="300px" height="500px"></canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+
         <p>
         <div class="referenceselector">
           <button class="btn btn-primary reference" id="reference1"></button>
@@ -61,32 +70,43 @@
           <button class="btn btn-primary reference" id="reference3"></button>
         </div>
         </p>
+        <img id="img_reference"></img>
         <h4 class="mt-1" id="text_referencetitle"></h4>
         <p id="text_reference"></p>
       </div>
     </div>
-
-    <div class="row">
+    <hr>
+    <div class="row first-row">
       <div class="col-10">
 
         <h2>Wie viel geld verlieren sie durch Foodwaste?</h2>
-
-        <div class="slidecontainer">
-          <input type="range" min="1" max="1000" value="620" class="slider" id="myRange">
-        </div>
-
-
+        <p>In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
+          Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden. Über den Slider können sie
+          sehen was sie stattdessen alles häten kaufen können.
+        </p>
       </div>
-      <!-- /.container -->
+      <div class="col-5">
+        <input type="range" width="500px" min="1" max="1000" value="330" class="slider" id="slider">
+        <h2 id="slider_val"></h2>
+      </div>
+      <div class="col-5">
+        <img id="slider_item"></img>
+        <h2 id="fw_val_in_chf"></h2>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
 
-      <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="./static/jquery-3.5.1.slim.min.js"></script>
-      <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="./static/jquery-3.5.1.slim.min.js"></script>
+  <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-      <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
-      <script src="./static/data_objects.js"></script>
-      <!-- Enthält die Funktonen für die Visualisierung-->
-      <script src="./static/reference_graphics.js"></script>
+  <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
+  <script src="./static/data_objects.js"></script>
+  <!-- Enthält die Funktonen für die Visualisierung-->
+  <script src="./static/reference_graphics.js"></script>
 </body>
+
+</html>
