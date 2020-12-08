@@ -161,7 +161,9 @@ $(function () {
 
 
 
-// ---------------------------------------------------------------------
+// ------------------------------ ZWEITE FUNKTION ---------------------------------------
+
+
 
 /* FUNCTION InRange
 Überprüfen ob Wert innerhalb eines Bereichs ist
