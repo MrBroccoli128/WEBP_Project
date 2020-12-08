@@ -1,112 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Food Waste">
-  <meta name="author" content="Patrick Kaelin, Jasmin Sutter, Jonathan Linder">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Food Waste">
+    <meta name="author" content="Patrick Kaelin, Jasmin Sutter, Jonathan Linder">
 
-  <title>Food Waste in der Schweiz</title>
+    <title>Food Waste in der Schweiz</title>
 
-  <!-- Bootstrap  CSS VON PATRICK EINGEFÜGT! -->
-  <link rel="stylesheet" href="static/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <!-- Bootstrap  CSS VON PATRICK EINGEFÜGT! -->
+    <link rel="stylesheet" href="static/bootstrap-4.3.1-dist/css/bootstrap.css">
 
-  <!-- Additional CSS VON PATRICK EINGEFÜGT!-->
-  <link rel="stylesheet" href="styles/styles.css">
+    <!-- Additional CSS VON PATRICK EINGEFÜGT!-->
+    <link rel="stylesheet" href="styles/styles.css">
 
-</head>
+  </head>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Grafik</h1>
-        <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
-          im unten gewählten Land erzeugt wird. Das Quadrat auf der linken Seite stellt die jährliche Foodwaste Menge
-          als XXX dar.
-          Jeder Pixel entspricht einem Meter. Auf der rechten Seite kann die Menge in Kontext zu Objekten in der echten
-          Welt
-          gesetzt werden.
-        </p>
-        <form class="form-inline justify-content-center">
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection"
-              checked>
-            <label>Schweiz</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
-            <label>Deutschland</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
-            <label>Italien</label>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-8 mt-4">
-        <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
-        <p id="text_foodwastebeschreibung"></p>
-        <canvas id="grafic" width="500px" height="500px"></canvas>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Grafik</h1>
+          <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
+            im unten gewählten Land erzeugt wird.
+            Jeder Pixel entspricht einem Meter. Auf der rechten Seite kann die Menge in Kontext zu Objekten in der echten
+            Welt
+            gesetzt werden.
+          </p>
+          <form class="form-inline justify-content-center">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection"
+                checked>
+              <label>Schweiz</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
+              <label>Deutschland</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
+              <label>Italien</label>
+            </div>
+          </form>
+          <div class="referenceselector form-inline justify-content-center">
+            <button class="btn btn-primary reference m-1" id="reference1"></button>
+            <button class="btn btn-primary reference m-1" id="reference2"></button>
+            <button class="btn btn-primary reference m-1" id="reference3"></button>
 
-      </div>
-      <div class="col-4 mt-4">
-        <h4 id="title_reference_cube"></h4>
-        <p id="text_reference_cube"></p>
-        <canvas id="grafic_ref" width="300px" height="500px"></canvas>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-
-
-        <p>
-        <div class="referenceselector">
-          <button class="btn btn-primary reference" id="reference1"></button>
-          <button class="btn btn-primary reference" id="reference2"></button>
-          <button class="btn btn-primary reference" id="reference3"></button>
         </div>
-        </p>
-        <img id="img_reference"></img>
-        <h4 class="mt-1" id="text_referencetitle"></h4>
-        <p id="text_reference"></p>
+
+      </div>
+      <div class="row">
+        <div class="col-7 mt-4">
+          <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
+
+          <canvas id="grafic" width="500px" height="500px"></canvas>
+          <p id="text_foodwastebeschreibung">In <span class="text_country"></span> fallen pro Jahr <span class="text_fw_in_T"></span> Tonnen an Food Waste an. Wenn diese Menge an Food Waste auf einen Würfel umgerechnet wird hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m. </p>
+        </div>
+        <div class="col-5 mt-4">
+          <h4>Volumen des <span class="title_reference_cube"></span> </h4>
+          <canvas id="grafic_ref" width="300px" height="500px"></canvas>
+          <p> <span id="text_reference_cube"></span><span id="text_reference_rel"></span></p>
+          <img id="img_reference"></img>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-10 mb-5">
+
+          <h2>Wie viel geld verlieren sie durch Foodwaste?</h2>
+          <p>In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
+            Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden. Über den Slider können sie
+            sehen was sie stattdessen alles häten kaufen können.
+          </p>
+          
+
+        </div>
+        <div class="col-5">
+          <input type="range" width="500px" min="1" max="750" value="330" class="slider" id="slider">
+          <h2 id="slider_val"></h2>
+        </div>
+        <div class="col-5">
+          <h3 id="slider_item_title"></h3>
+          <div class="mb-1" id="slider_item_text"></div>
+          <img id="slider_item_img"></img>
+          <h2 id="fw_val_in_chf"></h2>
+        </div>
       </div>
     </div>
-    <hr>
-    <div class="row first-row">
-      <div class="col-10">
+    <!-- /.container -->
 
-        <h2>Wie viel geld verlieren sie durch Foodwaste?</h2>
-        <p>In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
-          Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden. Über den Slider können sie
-          sehen was sie stattdessen alles häten kaufen können.
-        </p>
-      </div>
-      <div class="col-5">
-        <input type="range" width="500px" min="1" max="1000" value="330" class="slider" id="slider">
-        <h2 id="slider_val"></h2>
-      </div>
-      <div class="col-5">
-        <img id="slider_item"></img>
-        <h2 id="fw_val_in_chf"></h2>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./static/jquery-3.5.1.slim.min.js"></script>
+    <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="./static/jquery-3.5.1.slim.min.js"></script>
-  <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-
-  <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
-  <script src="./static/data_objects.js"></script>
-  <!-- Enthält die Funktonen für die Visualisierung-->
-  <script src="./static/reference_graphics.js"></script>
-</body>
+    <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
+    <script src="./static/data_objects.js"></script>
+    <!-- Enthält die Funktonen für die Visualisierung-->
+    <script src="./static/reference_graphics.js"></script>
+  </body>
 
 </html>
