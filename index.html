@@ -1,88 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Food Waste">
-    <meta name="author" content="Patrick Kaelin, Jasmin Sutter, Jonathan Linder">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Food Waste">
+  <meta name="author" content="Patrick Kaelin, Jasmin Sutter, Jonathan Linder">
 
-    <title>Food Waste in der Schweiz</title>
+  <title>Food Waste in der Schweiz</title>
 
-    <!-- Bootstrap  CSS VON PATRICK EINGEFÜGT! -->
-    <link rel="stylesheet" href="static/bootstrap-4.3.1-dist/css/bootstrap.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="static/bootstrap-4.3.1-dist/css/bootstrap.css">
 
-    <!-- Additional CSS VON PATRICK EINGEFÜGT!-->
-    <link rel="stylesheet" href="styles/styles.css">
+  <!-- Individual CSS styles-->
+  <link rel="stylesheet" href="styles/styles.css">
 
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>Grafik</h1>
-          <p id="b_text"> Diese Grafik ermöglicht die abstrakte Visualisierung der Menge an Food Waste, welche pro Jahr in
-            im unten gewählten Land erzeugt wird.
-            Jeder Pixel entspricht einem Meter. Auf der rechten Seite kann die Menge in Kontext zu Objekten in der echten
-            Welt
-            gesetzt werden.
-          </p>
-          <form class="form-inline justify-content-center">
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection"
-                checked>
-              <label>Schweiz</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
-              <label>Deutschland</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
-              <label>Italien</label>
-            </div>
-          </form>
-          <div class="referenceselector form-inline justify-content-center">
-            <button class="btn btn-primary reference m-1" id="reference1"></button>
-            <button class="btn btn-primary reference m-1" id="reference2"></button>
-            <button class="btn btn-primary reference m-1" id="reference3"></button>
+<body>
 
+  <div class="container">
+    <!-- Die erste Row enthält das Intro für den User sowie die Buttons zur Interaktion mit den Grafiken. !-->
+    <div class="row">
+      <div class="col-12">
+        <h1>Food Waste Visualisierung</h1>
+        <p>
+          Jedes Jahr landen weltweit 1.6 Milliarden Tonnen Lebensmittel im Abfall!
+          Das entspricht 1/3 aller Lebensmittel auf der Welt.
+          Alleine in der Schweiz sind es jährlich 2,8 Millionen Tonnen.
+          <br>
+          Ganz schön viel, oder?!
+          <br>
+          Finde heraus, in welchem Verhältnis die jährlichen Abfallmengen der Länder Schweiz, Deutschland und Italien zu
+          bekannten Gebäuden und Seen stehen.
+        </p>
+        <!-- 
+            Diese Form beeinhaltet Radio Buttons, mit welcher das Land welches angezeigt werden soll selektiert wird. 
+            Der Change innerhalb dieser Form wird getriggert und anhand der ID werden des "checked" Radios das Land selectiert
+          -->
+        <form class="form-inline justify-content-center">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-inline countryselctor" id="schweiz" name="contryselection"
+              checked>
+            <label>Schweiz</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-inline countryselctor" id="deutschland" name="contryselection">
+            <label>Deutschland</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-inline countryselctor" id="italien" name="contryselection">
+            <label>Italien</label>
+          </div>
+        </form>
+
+        <!-- 
+            Folgende Buttons stellen die Selection des Referenz gegenstands zur Verfügung. 
+            Die Befüllung der leeren Buttons wird durch den Landchange Trigger aus dem oben stehenden Form ausgeführt. 
+            Sie erhalten dann den zum Land passenden Buttontext als String.
+          -->
+        <div class="referenceselector form-inline justify-content-center">
+          <button class="btn btn-primary reference m-1" id="reference1"></button>
+          <button class="btn btn-primary reference m-1" id="reference2"></button>
+          <button class="btn btn-primary reference m-1" id="reference3"></button>
         </div>
 
       </div>
+      <!-- Diese Row enthält die Würfel, welche den Food Waste visualisieren sowie dessen Beschreibungen.  -->
       <div class="row">
+        <!-- Spalte für alle Informationen zum Land  -->
         <div class="col-7 mt-4">
           <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
-
+          <!-- Canvas für den "Landeswürfel"  -->
           <canvas id="grafic" width="500px" height="500px"></canvas>
-          <p id="text_foodwastebeschreibung">In <span class="text_country"></span> fallen pro Jahr <span class="text_fw_in_T"></span> Tonnen an Food Waste an. Wenn diese Menge an Food Waste auf einen Würfel umgerechnet wird hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m. </p>
+
+          <!-- Land Beschreibungstext mit den Eckdaten -->
+          <p>In <span class="text_country"></span> fallen pro Jahr 
+            <span class="text_fw_in_T"></span> Tonnen an Food Waste an. Wenn diese Menge an Food Waste auf einen Würfel
+            umgerechnet wird hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m. 
+          </p>
         </div>
+        <!-- Spalte für alle Informationen zum Referenzobjekt  -->
         <div class="col-5 mt-4">
-          <h4>Volumen des <span class="title_reference_cube"></span> </h4>
+          <h4>Volumen des <span class="title_reference_cube"></span></h4>
+          <!-- Canvas für den Referenzobjektwürfel  -->
           <canvas id="grafic_ref" width="300px" height="500px"></canvas>
+          <!-- Beschreibung des Referenzobjekts aus data_objects  -->
           <p> <span id="text_reference_cube"></span><span id="text_reference_rel"></span></p>
           <img id="img_reference"></img>
         </div>
       </div>
 
       <hr>
+      <!-- Row für die zweite Funktion der Webseite -->
       <div class="row">
         <div class="col-10 mb-5">
-
+          <!-- Intro text -->
           <h2>Wie viel geld verlieren sie durch Foodwaste?</h2>
-          <p>In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
-            Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden. Über den Slider können sie
-            sehen was sie stattdessen alles häten kaufen können.
+          <p>
+            In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
+            Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden. 
+            <br>Über den Slider können sie sehen was sie stattdessen alles häten kaufen können.
           </p>
-          
-
         </div>
         <div class="col-5">
+          <!-- Slider -->
           <input type="range" width="500px" min="1" max="750" value="330" class="slider" id="slider">
+          <!-- Ausgabe des aktuellen Sliderwerts -->
           <h2 id="slider_val"></h2>
         </div>
+
         <div class="col-5">
+                  <!-- Ausgabe des Gegenstands mit dem Gegenwert des ausgewählten Foodwastes -->
           <h3 id="slider_item_title"></h3>
           <div class="mb-1" id="slider_item_text"></div>
           <img id="slider_item_img"></img>
@@ -102,6 +131,6 @@
     <script src="./static/data_objects.js"></script>
     <!-- Enthält die Funktonen für die Visualisierung-->
     <script src="./static/reference_graphics.js"></script>
-  </body>
+</body>
 
 </html>

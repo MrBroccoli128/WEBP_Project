@@ -63,7 +63,7 @@ $(function () {
     // Text anpassen
     $('#text_reference_cube').text(eval(countyselect)["references"][this.id]["text"]);
     // Set relation sentence
-    $('#text_reference_rel').text(" Der Food Waste von " + eval(countyselect).countryname + " passt somit " + calcrelation(eval(countyselect).foodwastequantity,eval(countyselect)["references"][this.id]["volumen"]) + " in den/die " + eval(countyselect)["references"][this.id]["name"] + ".");
+    $('#text_reference_rel').text("Der Food Waste von " + eval(countyselect).countryname + " passt somit " + calcrelation(eval(countyselect).foodwastequantity,eval(countyselect)["references"][this.id]["volumen"]) + " in den/die " + eval(countyselect)["references"][this.id]["name"] + ".");
 
   });
 

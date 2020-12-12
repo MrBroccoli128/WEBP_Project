@@ -94,14 +94,14 @@ var sparpotential = {
         max: 500,
         title: "Playstation 5",
         desc: "Eine Playstation 5 wäre doch viel cooler",
-        image_link: "./images/img_slider/ps5.png"
+        image_link: "./images/img_slider/ps5.jpg"
     },
     item4: { // 501 - 700 CHF
         min: 501,
         max: 700,
         title: "Grafikkarte",
         desc: "Für dieses Geld hätte ich mir lieber eine neue Grafikkarte für meinen PC gekauft.",
-        image_link: "./images/img_slider/gk.png"
+        image_link: "./images/img_slider/gk.jpg"
     },
     item5: { // 701 - 900 CHF
         min: 701,
