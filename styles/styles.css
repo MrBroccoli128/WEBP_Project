@@ -1,6 +1,7 @@
 .nopadding {
     padding: 0 !important;
- }
+}
+
 .slider {
     width: 300px;
 }
@@ -9,19 +10,22 @@
 .intro-page-row {
     min-height: 100vh;
 }
+
 #grafic {
-width: 500px;
-height: 500px;
+    width: 500px;
+    height: 500px;
 }
+
 .vl {
     border-left: 1px solid black;
     height: 500px;
-  }
+}
 
-  h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: green;
-  }
-
-  input[type='radio']:checked {
-    background:green;
-  }
+}
