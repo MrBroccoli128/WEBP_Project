@@ -7,7 +7,7 @@ var schweiz = {
             name: "Prime Tower",
             volumen: 228000,
             image_link: "./images/Prime_Tower.png",
-            text: "Prime Tower ist ein Hochhaus in Zürich. Das 126 Meter hohe Bauwerk mit 36 Stockwerken hat ein Volumen von 228.000m³."
+            text: "Der Prime Tower ist ein Hochhaus in Zürich. Das 126 Meter hohe Bauwerk mit 36 Stockwerken hat ein Volumen von 228.000m³."
         },
         reference2: {
             name: "Roche Tower",
@@ -38,13 +38,13 @@ var deutschland = {
             name: "Alianz Arena",
             volumen: 2928300,
             image_link: "./images/alianzarena.png",
-            text: "Das Volumen der Allianz-Arena schlägt Daumen mal Pi mit 2.928.300m³ (258m x 227m x 50m) zu Buche"
+            text: "Das Volumen der Allianz-Arena schlägt Daumen mal Pi mit 2.928.300m³ (258m x 227m x 50m) zu Buche."
         },
         reference3: {
-            name: "DE Ref 3",
-            volumen: 300000,
-            image_link: "",
-            text: ""
+            name: "Elbphilharmonie",
+            volumen: 1100000,
+            image_link: "./images/elphi.png",
+            text: "Die Elbphilharmonie ist das neue Wahrzeichen von Hamburg und eines der modernsten Konzerthäuser der Welt. Allein der Grosse Saal hat ein Volumen von 40.000m³."
         }
     }
 };
@@ -66,10 +66,10 @@ var italien = {
             text: "Das Kolosseum ist ellipsenförmig gebaut. Seine Breite beträgt 156 Meter, die Länge 188 Meter, der Umfang 527 Meter, die Höhe 48 Meter. Auch der Boden der Arena war elliptisch mit einer Breite von 54 Metern und einer Länge von 86 Metern."
         },
         reference3: {
-            name: "Italien Ref 3",
-            volumen: 300000,
-            image_link: "",
-            text: ""
+            name: "Schiefer Turm von Pisa",
+            volumen: 6220,
+            image_link: "./images/pisa.png",
+            text: "Der Turm von Pisa ist 55m hoch und hat einen Durchmesser 12m. Er ist vor allem dafür bekannt das er nicht mehr ganz so gerade da steht."
         }
     }
 };
@@ -86,7 +86,7 @@ var sparpotential = {
         min: 101,
         max: 300,
         title: "Grosseinkauf",
-        desc: "Dieser Betrag reicht für einen Grosseinkauf in der Schweiz.",
+        desc: "Dieser Betrag reicht für einen Grosseinkauf in der Migros.",
         image_link: "./images/img_slider/einkaufswagen.png",
     },
     item3: { // 301 - 500 CHF
