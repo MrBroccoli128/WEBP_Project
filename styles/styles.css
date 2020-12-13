@@ -5,10 +5,9 @@
     width: 300px;
 }
 
-.first-row {
-
+/* Für die Introseiten */
+.page-row {
     min-height: 100vh;
-
 }
 #grafic {
 width: 500px;
