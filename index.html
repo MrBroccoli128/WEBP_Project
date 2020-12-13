@@ -18,33 +18,32 @@
 </head>
 
 <body>
-
   <div class="container">
     <!-- Die erste Row enthält das Intro für den User sowie die Buttons zur Interaktion mit den Grafiken. !-->
     <div class="row intro-page-row">
       <div class="col-12 text-center align-self-center">
-        <h1>Jedes Jahr landen weltweit 1.6 Milliarden Tonnen Lebensmittel im Abfall!</h1>
+        <h1>Jedes Jahr landen weltweit <span class="green">1.6 Milliarden Tonnen</span> Lebensmittel im Abfall!</h1>
       </div>
     </div>
 
     <div class="row intro-page-row">
       <div class="col-12 text-center align-self-center">
-        <h2>Das entspricht einem <b>DRITTEL</b> aller Lebensmittel auf der Welt.</h2>
+        <h2>Das entspricht einem <span class="green">DRITTEL</span> aller Lebensmittel auf der Welt.</h2>
       </div>
     </div>
     <div class="row intro-page-row">
       <div class="col-12 text-center align-self-center">
-        <h2>Alleine in der Schweiz sind es jährlich 2,8 Millionen Tonnen.</h2>
+        <h2>Alleine in der Schweiz sind es jährlich <span class="green">2.8 Millionen Tonnen</span>.</h2>
       </div>
     </div>
     <div class="row intro-page-row">
       <div class="col-12 text-center align-self-center">
-        <h3>Ganz schön viel, oder?!</h3>
+        <h2>Ganz schön viel, oder?!</h2>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <h3 class="m-3 text-center">Finde heraus, in welchem Verhältnis die jährlichen Food Waste Menge der Länder Schweiz,
+        <h3 class="m-3 text-center"><span class="green">Finde heraus</span>, in welchem Verhältnis die jährlichen Food Waste Menge der Länder Schweiz,
           Deutschland und Italien zu
           bekannten Gebäuden und Seen stehen.</h3>
 
@@ -87,7 +86,7 @@
       <div class="col-7 mt-4">
         <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
         <!-- Canvas für den "Landeswürfel"  -->
-        <canvas id="grafic" width="500px" height="500px"></canvas>
+        <canvas id="grafic" width="500" height="500"></canvas>
 
         <!-- Land Beschreibungstext mit den Eckdaten -->
         <p>In <span class="text_country"></span> fallen pro Jahr
@@ -99,11 +98,11 @@
       <div class="col-5 mt-4">
         <h4>Volumen <span class="title_reference_cube"></span></h4>
         <!-- Canvas für den Referenzobjektwürfel  -->
-        <canvas id="grafic_ref" width="300px" height="500px"></canvas>
+        <canvas id="grafic_ref" width="300" height="500"></canvas>
 
         <!-- Beschreibung des Referenzobjekts aus data_objects  -->
 
-        <p><img class="float-left mr-1" id="img_reference"></img> <span id="text_reference_cube"></span><span
+        <p><img class="float-left mr-1" id="img_reference"><span id="text_reference_cube"></span><span
             id="text_reference_rel"></span></p>
 
 
@@ -133,7 +132,7 @@
         <!-- Ausgabe des Gegenstands mit dem Gegenwert des ausgewählten Foodwastes -->
         <h3 id="slider_item_title"></h3>
         <div class="mb-1" id="slider_item_text"></div>
-        <img id="slider_item_img"></img>
+        <img id="slider_item_img">
         <h2 id="fw_val_in_chf"></h2>
       </div>
     </div>
