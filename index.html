@@ -66,6 +66,7 @@
         </div>
 
       </div>
+    </div>
       <!-- Diese Row enthält die Würfel, welche den Food Waste visualisieren sowie dessen Beschreibungen.  -->
       <div class="row">
         <!-- Spalte für alle Informationen zum Land  -->
@@ -75,20 +76,21 @@
           <canvas id="grafic" width="500px" height="500px"></canvas>
 
           <!-- Land Beschreibungstext mit den Eckdaten -->
-          <p>In <span class="text_country"></span> fallen pro Jahr 
+          <p>In <span class="text_country"></span> fallen pro Jahr
             <span class="text_fw_in_T"></span> Tonnen an Food Waste an. Wenn diese Menge an Food Waste auf einen Würfel
-            umgerechnet wird, hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m. 
+            umgerechnet wird, hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m.
           </p>
         </div>
         <!-- Spalte für alle Informationen zum Referenzobjekt  -->
         <div class="col-5 mt-4">
-          <h4>Volumen des <span class="title_reference_cube"></span></h4>
+          <h4>Volumen <span class="title_reference_cube"></span></h4>
           <!-- Canvas für den Referenzobjektwürfel  -->
           <canvas id="grafic_ref" width="300px" height="500px"></canvas>
-          
+
           <!-- Beschreibung des Referenzobjekts aus data_objects  -->
-          
-          <p><img class="float-left mr-1" id="img_reference"></img> <span id="text_reference_cube"></span><span id="text_reference_rel"></span></p>
+
+          <p><img class="float-left mr-1" id="img_reference"></img> <span id="text_reference_cube"></span><span
+              id="text_reference_rel"></span></p>
 
 
         </div>
@@ -99,10 +101,10 @@
       <div class="row">
         <div class="col-10 mb-5">
           <!-- Intro text -->
-          <h2>Wie viel geld verlierst du durch Foodwaste?</h2>
+          <h2>Wie viel Geld verlierst du durch Foodwaste?</h2>
           <p>
             In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
-            Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden. 
+            Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden.
             <br>Über den Slider kannst sehen was du dir stattdessen alles kaufen könntest.
           </p>
         </div>
@@ -114,7 +116,7 @@
         </div>
 
         <div class="col-5">
-                  <!-- Ausgabe des Gegenstands mit dem Gegenwert des ausgewählten Foodwastes -->
+          <!-- Ausgabe des Gegenstands mit dem Gegenwert des ausgewählten Foodwastes -->
           <h3 id="slider_item_title"></h3>
           <div class="mb-1" id="slider_item_text"></div>
           <img id="slider_item_img"></img>

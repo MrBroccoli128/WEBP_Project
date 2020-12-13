@@ -19,7 +19,7 @@ var schweiz = {
             name: "Cresta See",
             volumen: 300000,
             image_link: "./images/cresta_see.png",
-            text: "Der Crestasee liegt zwischen Flims und Trin im schweizerischen Kanton Graubünden auf 844 m Höhe. Der See ist 280m lang und hat eine maximal Tiefe von 14m. Das das Wasservolumen beträgt 300.000m³."
+            text: "Der Crestasee liegt zwischen Flims und Trin im schweizerischen Kanton Graubünden auf 844 m Höhe. Der See ist 280m lang und hat eine maximal Tiefe von 14m. Das Wasservolumen beträgt 300.000m³."
         }
     }
 };
@@ -35,7 +35,7 @@ var deutschland = {
             text: "Die Gesamtlänge beträgt außen 145 m, (Kölner Dom 144,58 m). Die Höhe des Mittelschiffes beträgt 42,30 m (43,35 m). Die Fläche auf der die Kathedrale ruht, hat die Ausmaße von 7.700 m² (7.914 m²), das Volumen ohne Strebewerk beträgt 200.000 m³ (407.000 m³)."
         },
         reference2: {
-            name: "Alianz Arena",
+            name: "Allianz Arena",
             volumen: 2928300,
             image_link: "./images/alianzarena.png",
             text: "Das Volumen der Allianz-Arena schlägt Daumen mal Pi mit 2.928.300m³ (258m x 227m x 50m) zu Buche."
@@ -69,7 +69,7 @@ var italien = {
             name: "Schiefer Turm von Pisa",
             volumen: 6220,
             image_link: "./images/pisa.png",
-            text: "Der Turm von Pisa ist 55m hoch und hat einen Durchmesser 12m. Er ist vor allem dafür bekannt das er nicht mehr ganz so gerade da steht."
+            text: "Der Schiefe Turm von Pisa ist 55m hoch und hat einen Durchmesser 12m. Er ist vor allem dafür bekannt, dass er nicht mehr ganz so gerade da steht."
         }
     }
 };
@@ -93,7 +93,7 @@ var sparpotential = {
         min: 301,
         max: 500,
         title: "Playstation 5",
-        desc: "Eine Playstation 5 wäre doch viel cooler",
+        desc: "Eine Playstation 5 wäre doch viel cooler.",
         image_link: "./images/img_slider/ps5.jpg"
     },
     item4: { // 501 - 700 CHF
@@ -114,7 +114,7 @@ var sparpotential = {
         min: 901,
         max: 2000,
         title: "Ferien",
-        desc: "Wären wir doch lieber in die Karibik gefolgen als unser gutes Essen wegzuwerfen.",
+        desc: "Mit diesem Geld könntest du dir einen schönen Urlaub auf den Malediven gönnen.",
         image_link: "./images/img_slider/karibik.png"
     }
 };
