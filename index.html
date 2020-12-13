@@ -23,25 +23,26 @@
     <!-- Die erste Row enthält das Intro für den User sowie die Buttons zur Interaktion mit den Grafiken. !-->
     <div class="row page-row">
       <div class="col-12 text-center align-self-center">
-        <h1 >Food Waste Visualisierung</h1>
+        <h1>Food Waste Visualisierung</h1>
         <p>Jedes Jahr landen weltweit 1.6 Milliarden Tonnen Lebensmittel im Abfall!</p>
       </div>
     </div>
 
-        <div class="row page-row">
-          <div class="col-12 text-center align-self-center">
-          <h3>Das entspricht einem <b>DRITTEL</b> aller Lebensmittel auf der Welt.</h3>
-          Alleine in der Schweiz sind es jährlich 2,8 Millionen Tonnen.
-        </div>
+    <div class="row page-row">
+      <div class="col-12 text-center align-self-center">
+        <h3>Das entspricht einem <b>DRITTEL</b> aller Lebensmittel auf der Welt.</h3>
+        Alleine in der Schweiz sind es jährlich 2,8 Millionen Tonnen.
       </div>
-      <div class="row page-row">
-        <div class="col-12 text-center align-self-center">
-          <h3>Ganz schön viel, oder?!</h3>
-        </div>
+    </div>
+    <div class="row page-row">
+      <div class="col-12 text-center align-self-center">
+        <h3>Ganz schön viel, oder?!</h3>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <h3>Finde heraus, in welchem Verhältnis die jährlichen Abfallmengen der Länder Schweiz, Deutschland und Italien zu
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h3 class="m-3 text-center">Finde heraus, in welchem Verhältnis die jährlichen Abfallmengen der Länder Schweiz,
+          Deutschland und Italien zu
           bekannten Gebäuden und Seen stehen.</h3>
 
         <!-- 
@@ -77,75 +78,75 @@
 
       </div>
     </div>
-      <!-- Diese Row enthält die Würfel, welche den Food Waste visualisieren sowie dessen Beschreibungen.  -->
-      <div class="row">
-        <!-- Spalte für alle Informationen zum Land  -->
-        <div class="col-7 mt-4">
-          <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
-          <!-- Canvas für den "Landeswürfel"  -->
-          <canvas id="grafic" width="500px" height="500px"></canvas>
+    <!-- Diese Row enthält die Würfel, welche den Food Waste visualisieren sowie dessen Beschreibungen.  -->
+    <div class="row">
+      <!-- Spalte für alle Informationen zum Land  -->
+      <div class="col-7 mt-4">
+        <h4>Foodwaste in <span class="text_country"></span> als Würfel</h4>
+        <!-- Canvas für den "Landeswürfel"  -->
+        <canvas id="grafic" width="500px" height="500px"></canvas>
 
-          <!-- Land Beschreibungstext mit den Eckdaten -->
-          <p>In <span class="text_country"></span> fallen pro Jahr
-            <span class="text_fw_in_T"></span> Tonnen an Food Waste an. Wenn diese Menge an Food Waste auf einen Würfel
-            umgerechnet wird, hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m.
-          </p>
-        </div>
-        <!-- Spalte für alle Informationen zum Referenzobjekt  -->
-        <div class="col-5 mt-4">
-          <h4>Volumen <span class="title_reference_cube"></span></h4>
-          <!-- Canvas für den Referenzobjektwürfel  -->
-          <canvas id="grafic_ref" width="300px" height="500px"></canvas>
-
-          <!-- Beschreibung des Referenzobjekts aus data_objects  -->
-
-          <p><img class="float-left mr-1" id="img_reference"></img> <span id="text_reference_cube"></span><span
-              id="text_reference_rel"></span></p>
-
-
-        </div>
+        <!-- Land Beschreibungstext mit den Eckdaten -->
+        <p>In <span class="text_country"></span> fallen pro Jahr
+          <span class="text_fw_in_T"></span> Tonnen an Food Waste an. Wenn diese Menge an Food Waste auf einen Würfel
+          umgerechnet wird, hat dieser Würfel eine Seitenlänge von <span class="text_q_length"></span>m.
+        </p>
       </div>
+      <!-- Spalte für alle Informationen zum Referenzobjekt  -->
+      <div class="col-5 mt-4">
+        <h4>Volumen <span class="title_reference_cube"></span></h4>
+        <!-- Canvas für den Referenzobjektwürfel  -->
+        <canvas id="grafic_ref" width="300px" height="500px"></canvas>
 
-      <hr>
-      <!-- Row für die zweite Funktion der Webseite -->
-      <div class="row">
-        <div class="col-10 mb-5">
-          <!-- Intro text -->
-          <h2>Wie viel Geld verlierst du durch Foodwaste?</h2>
-          <p>
-            In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
-            Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden.
-            <br>Über den Slider kannst sehen was du dir stattdessen alles kaufen könntest.
-          </p>
-        </div>
-        <div class="col-5">
-          <!-- Slider -->
-          <input type="range" width="500px" min="1" max="750" value="330" class="slider" id="slider">
-          <!-- Ausgabe des aktuellen Sliderwerts -->
-          <h2 id="slider_val"></h2>
-        </div>
+        <!-- Beschreibung des Referenzobjekts aus data_objects  -->
 
-        <div class="col-5">
-          <!-- Ausgabe des Gegenstands mit dem Gegenwert des ausgewählten Foodwastes -->
-          <h3 id="slider_item_title"></h3>
-          <div class="mb-1" id="slider_item_text"></div>
-          <img id="slider_item_img"></img>
-          <h2 id="fw_val_in_chf"></h2>
-        </div>
+        <p><img class="float-left mr-1" id="img_reference"></img> <span id="text_reference_cube"></span><span
+            id="text_reference_rel"></span></p>
+
+
       </div>
     </div>
-    <!-- /.container -->
 
-    <!-- Bootstrap core JavaScript
+    <hr>
+    <!-- Row für die zweite Funktion der Webseite -->
+    <div class="row">
+      <div class="col-10 mb-5">
+        <!-- Intro text -->
+        <h2>Wie viel Geld verlierst du durch Foodwaste?</h2>
+        <p>
+          In der Schweiz entfallen somit 330 kg pro Person und Jahr. Dies entspricht dem Wert von 620 CHF. <br>
+          Durch die Vermeidung von Foodwaste kann viel Geld in jedem Haushalt gespart werden.
+          <br>Über den Slider kannst sehen was du dir stattdessen alles kaufen könntest.
+        </p>
+      </div>
+      <div class="col-5">
+        <!-- Slider -->
+        <input type="range" width="500px" min="1" max="750" value="330" class="slider" id="slider">
+        <!-- Ausgabe des aktuellen Sliderwerts -->
+        <h2 id="slider_val"></h2>
+      </div>
+
+      <div class="col-5">
+        <!-- Ausgabe des Gegenstands mit dem Gegenwert des ausgewählten Foodwastes -->
+        <h3 id="slider_item_title"></h3>
+        <div class="mb-1" id="slider_item_text"></div>
+        <img id="slider_item_img"></img>
+        <h2 id="fw_val_in_chf"></h2>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- Bootstrap core JavaScript
       ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./static/jquery-3.5.1.slim.min.js"></script>
-    <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="./static/jquery-3.5.1.slim.min.js"></script>
+  <script src="./static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-    <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
-    <script src="./static/data_objects.js"></script>
-    <!-- Enthält die Funktonen für die Visualisierung-->
-    <script src="./static/reference_graphics.js"></script>
+  <!--Enthält alle Daten, wäre normalerweise eine DB :) -->
+  <script src="./static/data_objects.js"></script>
+  <!-- Enthält die Funktonen für die Visualisierung-->
+  <script src="./static/reference_graphics.js"></script>
 </body>
 
 </html>
