@@ -1,6 +1,4 @@
 $(function () {
-
-
   /* Canvas definieren 
   c = Landesvolumen Würfel
   r = Referenzgebäude Würfel
@@ -57,7 +55,7 @@ $(function () {
     drawCube(rtx, r, 150, 480, getcbrt(eval(countyselect)["references"][id]["volumen"]));
 
     // Image einblenden
-    $('#img_reference').attr("src", eval(countyselect)["references"][id]["image_link"]).height(300).width(300);
+    $('#img_reference').attr("src", eval(countyselect)["references"][id]["image_link"]).height(120).width(100);
     // Titel anpassen
     $('.title_reference_cube').text(eval(countyselect)["references"][this.id]["name"]);
     // Text anpassen
